@@ -19,7 +19,8 @@ namespace PS4_BO3_GSC
             fiveOFive = 0,
             sixSevenTwo = 1,
             sevenOTwo = 2,
-            sevenFiveFive = 3
+            sevenFiveFive = 3,
+            nineOO = 4
         }
     }
 }

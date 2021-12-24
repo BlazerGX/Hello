@@ -64,6 +64,7 @@ namespace PS4_BO3_GSC
             this.sevenOTwoRadioButton = new MetroFramework.Controls.MetroRadioButton();
             this.sixSevenTwoRadioButton = new MetroFramework.Controls.MetroRadioButton();
             this.fiveOFiveRadioButton = new MetroFramework.Controls.MetroRadioButton();
+            this.nineOO = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.styleManager)).BeginInit();
             this.connectionGroupBox.SuspendLayout();
             this.compilerGroupBox.SuspendLayout();
@@ -514,6 +515,7 @@ namespace PS4_BO3_GSC
             // 
             // consoleVersionGroupBox
             // 
+            this.consoleVersionGroupBox.Controls.Add(this.nineOO);
             this.consoleVersionGroupBox.Controls.Add(this.sevenFiveFiveRadioButton);
             this.consoleVersionGroupBox.Controls.Add(this.sevenOTwoRadioButton);
             this.consoleVersionGroupBox.Controls.Add(this.sixSevenTwoRadioButton);
@@ -521,7 +523,7 @@ namespace PS4_BO3_GSC
             this.consoleVersionGroupBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(65)))), ((int)(((byte)(153)))));
             this.consoleVersionGroupBox.Location = new System.Drawing.Point(230, 385);
             this.consoleVersionGroupBox.Name = "consoleVersionGroupBox";
-            this.consoleVersionGroupBox.Size = new System.Drawing.Size(280, 63);
+            this.consoleVersionGroupBox.Size = new System.Drawing.Size(328, 63);
             this.consoleVersionGroupBox.TabIndex = 8;
             this.consoleVersionGroupBox.TabStop = false;
             this.consoleVersionGroupBox.Text = "Console Version";
@@ -575,6 +577,18 @@ namespace PS4_BO3_GSC
             this.fiveOFiveRadioButton.UseSelectable = true;
             this.fiveOFiveRadioButton.UseStyleColors = true;
             this.fiveOFiveRadioButton.CheckedChanged += new System.EventHandler(this.fiveOFiveRadioButton_CheckedChanged);
+            // 
+            // nineOO
+            // 
+            this.nineOO.AutoSize = true;
+            this.nineOO.Location = new System.Drawing.Point(244, 28);
+            this.nineOO.Name = "nineOO";
+            this.nineOO.Size = new System.Drawing.Size(44, 15);
+            this.nineOO.TabIndex = 9;
+            this.nineOO.Text = "9.00";
+            this.nineOO.UseSelectable = true;
+            this.nineOO.UseStyleColors = true;
+            this.nineOO.CheckedChanged += new System.EventHandler(this.nineOO_CheckedChanged);
             // 
             // MainWindow
             // 
@@ -649,6 +663,7 @@ namespace PS4_BO3_GSC
         private System.Windows.Forms.Button attachBo3Button;
         private MetroFramework.Controls.MetroTextBox ps4PortTextBox;
         private MetroFramework.Controls.MetroLabel portLabel;
+        private MetroFramework.Controls.MetroRadioButton nineOO;
     }
 }
 

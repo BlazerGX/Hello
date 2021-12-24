@@ -45,14 +45,26 @@ namespace PS4_BO3_GSC
         {
             var savedVersion = (Enums.ConsoleVersion)Properties.Settings.Default.ps4Version;
             selectedConsoleVersion = savedVersion;
-            if (savedVersion == Enums.ConsoleVersion.fiveOFive)
-                fiveOFiveRadioButton.Checked = true;
-            else if (savedVersion == Enums.ConsoleVersion.sixSevenTwo)
-                sixSevenTwoRadioButton.Checked = true;
-            else if (savedVersion == Enums.ConsoleVersion.sevenOTwo)
-                sevenOTwoRadioButton.Checked = true;
-            else
-                sevenFiveFiveRadioButton.Checked = true;
+
+            switch (savedVersion)
+            {
+                case Enums.ConsoleVersion.fiveOFive:
+                    fiveOFiveRadioButton.Checked = true;
+                    return;
+                case Enums.ConsoleVersion.sixSevenTwo:
+                    sixSevenTwoRadioButton.Checked = true;
+                    return;
+                case Enums.ConsoleVersion.sevenOTwo:
+                    sevenOTwoRadioButton.Checked = true;
+                    return;
+                case Enums.ConsoleVersion.sevenFiveFive:
+                    sevenFiveFiveRadioButton.Checked = true;
+                    return;
+                case Enums.ConsoleVersion.nineOO:
+                    nineOO.Checked = true;
+                    return;
+
+            }
         }
 
         private string getPayloadFileForVersion()
@@ -67,6 +79,8 @@ namespace PS4_BO3_GSC
                     return $"{payloadsDirectory}\\6_72\\{payloadFileName}";
                 case Enums.ConsoleVersion.sevenOTwo:
                     return $"{payloadsDirectory}\\7_02\\{payloadFileName}";
+                case Enums.ConsoleVersion.nineOO:
+                    return $"{payloadsDirectory}\\9_00\\{payloadFileName}";
                 default:
                     return $"{payloadsDirectory}\\7_55\\{payloadFileName}";
             }
@@ -393,6 +407,13 @@ namespace PS4_BO3_GSC
             Properties.Settings.Default.ps4Version = (int)consoleVersion;
             Properties.Settings.Default.Save();
             this.selectedConsoleVersion = consoleVersion;
+        }
+
+        private void nineOO_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+            if (radioButton.Checked)
+                updateConsoleVersion(Enums.ConsoleVersion.nineOO);
         }
     }
 }
